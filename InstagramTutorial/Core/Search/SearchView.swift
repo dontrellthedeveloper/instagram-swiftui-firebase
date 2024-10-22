@@ -26,7 +26,8 @@ struct SearchView: View {
                                 Text("digital_leo")
                                     .fontWeight(.semibold)
                                 
-                                Text("Camron Lewis")
+                                Text("Leo Chriss")
+                                
                             }
                             .font(.footnote)
                             
