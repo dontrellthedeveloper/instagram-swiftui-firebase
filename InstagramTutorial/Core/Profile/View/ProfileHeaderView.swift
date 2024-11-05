@@ -48,7 +48,7 @@ struct ProfileHeaderView: View {
                         .font(.footnote)
                 }
                 
-                Text(user.username)
+       
                 
           
             }
@@ -80,7 +80,7 @@ struct ProfileHeaderView: View {
             
         }
         .fullScreenCover(isPresented: $showEditProfile) {
-            Text("Edit Profile view")
+            EditProfileView(user: user)
         }
     }
 }
