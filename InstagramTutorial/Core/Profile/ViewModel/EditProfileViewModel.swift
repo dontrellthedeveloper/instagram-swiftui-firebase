@@ -10,7 +10,7 @@ import SwiftUI
 import Firebase
 
 
-@MainActor
+//@MainActor
 class EditProfileViewModel: ObservableObject {
     @Published var user: User
     
@@ -31,6 +31,14 @@ class EditProfileViewModel: ObservableObject {
     
     init(user: User) {
         self.user = user
+        
+        if let fullname = user.fullName {
+            self.fullname = fullname
+        }
+        
+        if let bio = user.bio {
+            self.bio = bio
+        }
     }
     
 
