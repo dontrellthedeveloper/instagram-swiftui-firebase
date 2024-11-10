@@ -16,16 +16,21 @@ struct Post: Identifiable, Hashable, Codable {
     let imageUrl: String
     let timestamp: Timestamp
     var user: User?
+    
+    var didLike: Bool? = false
 }
 
 extension Post {
+    static let MOCK_IMAGE_URL =
+    "https://i.ibb.co/7v0DRQw/Screen-Shot-2022-08-15-at-1-25-30-PM.jpg"
+    
     static var MOCK_POSTS: [Post] = [
         .init(
             id: NSUUID().uuidString,
             ownderUid: NSUUID().uuidString,
             caption: "BTS of a recent celeb shoot 📸",
             likes: 320,
-            imageUrl: "digital_leo_2",
+            imageUrl: Post.MOCK_IMAGE_URL,
             timestamp: Timestamp(),
             user: User.MOCK_USERS[0]
         ),
@@ -34,7 +39,7 @@ extension Post {
             ownderUid: NSUUID().uuidString,
             caption: "Traveling is a culture ✈️",
             likes: 165,
-            imageUrl: "digital_nomad_2",
+            imageUrl: Post.MOCK_IMAGE_URL,
             timestamp: Timestamp(),
             user: User.MOCK_USERS[1]
         ),
@@ -43,7 +48,7 @@ extension Post {
             ownderUid: NSUUID().uuidString,
             caption: "Classic Book 👌",
             likes: 102,
-            imageUrl: "love_lopez_2",
+            imageUrl: Post.MOCK_IMAGE_URL,
             timestamp: Timestamp(),
             user: User.MOCK_USERS[2]
         ),
@@ -52,7 +57,7 @@ extension Post {
             ownderUid: NSUUID().uuidString,
             caption: "Roller x Skechers",
             likes: 23,
-            imageUrl: "roller_taylor_2",
+            imageUrl: Post.MOCK_IMAGE_URL,
             timestamp: Timestamp(),
             user: User.MOCK_USERS[3]
         ),
@@ -61,7 +66,7 @@ extension Post {
             ownderUid: NSUUID().uuidString,
             caption: "The Visual Don",
             likes: 145,
-            imageUrl: "visual_sam_2",
+            imageUrl: Post.MOCK_IMAGE_URL,
             timestamp: Timestamp(),
             user: User.MOCK_USERS[4]
         ),
