@@ -22,3 +22,7 @@ struct Comment: Codable, Identifiable {
         return commentId ?? NSUUID().uuidString
     }
 }
+
+extension Comment {
+    static let MOCK_COMMENT = Comment(postOwnerUid: "123", commentText: "Test Comment", postId: "1234", timestamp: Timestamp(), commentOwnerUid: "123345")
+}
