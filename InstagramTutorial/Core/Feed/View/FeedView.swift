@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FeedView: View {
     @StateObject var viewModel = FeedViewModel()
+
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -21,6 +23,7 @@ struct FeedView: View {
             }
             .navigationTitle("Feed")
             .navigationBarTitleDisplayMode(.inline)
+
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Image("Instagram_logo_black")
