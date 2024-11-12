@@ -12,9 +12,8 @@ class ProfileViewModel: ObservableObject {
     @Published var user: User
     
     init(user: User) {
+        print("DEBUG: Did init...")
         self.user = user
-        checkIfUserIsFollowed()
-        fetchUserStats()
     }
     
     func fetchUserStats() {
