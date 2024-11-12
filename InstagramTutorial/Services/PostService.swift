@@ -11,7 +11,7 @@ import FirebaseAuth
 
 struct PostService {
     
-    private static let postsCollection = FirebaseConstants.PostCollection
+    private static let postsCollection = FirebaseConstants.PostsCollection
     
     static func fetchFeedPosts() async throws -> [Post] {
         let snapshot = try await postsCollection.getDocuments()
