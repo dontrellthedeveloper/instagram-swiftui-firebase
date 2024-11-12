@@ -128,6 +128,10 @@ struct ProfileHeaderView: View {
             Divider()
             
         }
+        .navigationDestination(for: UserListConfig.self, destination: { config in
+            UserListView(config: config)
+//            Text(config.navigationTitle)
+        })
         .onAppear {
             viewModel.fetchUserStats()
             viewModel.checkIfUserIsFollowed()
