@@ -6,23 +6,24 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct NotificationCell: View {
     let notification: Notification
     
     var body: some View {
         HStack {
-            CircularProfileImageView(size: .xSmall)
+            CircularProfileImageView(user: notification.user, size: .xSmall)
             
             HStack {
-                Text("yuki")
+                Text(notification.user?.username ?? "")
                     .font(.subheadline)
                     .fontWeight(.semibold) +
                 
                 Text(" \(notification.type.notificationMessage)")
                     .font(.subheadline) +
                 
-                Text(" 3w")
+                Text(" \(notification.timestamp.timestampString())")
                     .foregroundStyle(.gray)
                     .font(.footnote)
             }
@@ -30,7 +31,7 @@ struct NotificationCell: View {
             Spacer()
             
             if notification.type != .follow {
-                Image("love_lopez_2")
+                KFImage(URL(string: notification.post?.imageUrl ?? ""))
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40)

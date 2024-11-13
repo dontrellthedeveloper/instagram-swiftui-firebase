@@ -12,17 +12,17 @@ class NotificationManager {
     static let shared = NotificationManager()
     private let service = NotificationService()
     
-    private init() {}
+    private init() { }
     
-    func uploadLikeNotification(toUid: String, post: Post) {
-        service.uploadNotification(toUid: toUid, type: .like, post: post)
+    func uploadLikeNotification(toUid uid: String, post: Post) {
+        service.uploadNotification(toUid: uid, type: .like, post: post)
     }
     
-    func uploadCommentNotification(toUid: String, post: Post) {
-        service.uploadNotification(toUid: toUid, type: .comment, post: post)
+    func uploadCommentNotification(toUid uid: String, post: Post) {
+        service.uploadNotification(toUid: uid, type: .comment, post: post)
     }
     
-    func uploadFollowingNotification(toUid: String) {
-        service.uploadNotification(toUid: toUid, type: .follow)
+    func uploadFollowingNotification(toUid uid: String) {
+        service.uploadNotification(toUid: uid, type: .follow)
     }
 }

@@ -8,9 +8,9 @@
 import Foundation
 
 enum NotificationType: Int, Codable {
-    case follow
-    case comment
     case like
+    case comment
+    case follow
     
     var notificationMessage: String {
         switch self {
