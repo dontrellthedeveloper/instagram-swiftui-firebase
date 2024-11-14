@@ -29,11 +29,16 @@ struct FeedCell: View {
             // image & username
             HStack {
                 if let user = post.user {
-                    CircularProfileImageView(user: user, size: .xSmall)
+                    NavigationLink(value: user) {
+                        CircularProfileImageView(user: user, size: .xSmall)
+                    }
                     
-                    Text(user.username)
-                        .font(.footnote)
-                        .fontWeight(.semibold)
+                    
+                    NavigationLink(value: user) {
+                        Text(user.username)
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                    }
                 }
                 
 

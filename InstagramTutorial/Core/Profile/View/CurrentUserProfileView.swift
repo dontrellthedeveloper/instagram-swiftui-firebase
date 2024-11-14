@@ -20,6 +20,9 @@ struct CurrentUserProfileView: View {
                 PostGridView(user: user)
                 
             }
+            .navigationDestination(for: Post.self, destination: { post in
+                FeedCell(post: post)
+            })
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

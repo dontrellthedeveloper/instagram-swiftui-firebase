@@ -21,6 +21,9 @@ struct FeedView: View {
                 }
                 .padding(.top, 8)
             }
+            .navigationDestination(for: User.self, destination: { user in
+                ProfileView(user: user)
+            })
             .navigationTitle("Feed")
             .navigationBarTitleDisplayMode(.inline)
 

@@ -20,9 +20,21 @@ struct ProfileView: View {
                 PostGridView(user: user)
                 
             }
+            .navigationDestination(for: Post.self, destination: { post in
+                FeedCell(post: post)
+            })
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
-
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        AuthService.shared.signOut()
+                    } label: {
+                        Image(systemName: "line.3.horizontal")
+                            .foregroundStyle(.black)
+                    }
+                }
+            }
     }
 }
 

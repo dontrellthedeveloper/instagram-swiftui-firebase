@@ -43,6 +43,8 @@ struct UserListView: View {
                         .foregroundStyle(.black)
                         .padding(.horizontal)
                     }
+//                    .navigationTitle("Followers")
+//                    .navigationBarTitleDisplayMode(.inline)
                 }
             }
             .padding(.top, 8)
